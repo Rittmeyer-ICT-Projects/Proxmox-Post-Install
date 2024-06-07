@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Condensed Proxmox Post Install Script, boiled down by Oliver Corrodi (Rittmeyer AG).
+# Hard coded for Servers who have no Proxmox subscription.
+# Based upon copyrighted work by tteck (tteckster), 2021-2024. https://github.com/tteck/Proxmox/raw/main/LICENSE
+# License: MIT
+
 # Correct Proxmox VE Sources
 cat <<EOF >/etc/apt/sources.list
 deb http://deb.debian.org/debian bookworm main contrib
