@@ -28,8 +28,8 @@ This script performs the following actions:
 ## Usage
 
 Copy this command to the Proxmox shell, and everything will run automatically.
-Script for machines without subscription: `bash -c "$(wget -qLO - https://raw.githubusercontent.com/Rittmeyer-ICT-Projects/Proxmox-Post-Install-Script/main/proxmox-post-install-no-subscription.sh) "`
-Script for machines with subscription: `bash -c "$(wget -qLO - https://raw.githubusercontent.com/Rittmeyer-ICT-Projects/Proxmox-Post-Install-Script/main/proxmox-post-install-with-subscription.sh) "`
+- Script for machines without subscription: `bash -c "$(wget -qLO - https://raw.githubusercontent.com/Rittmeyer-ICT-Projects/Proxmox-Post-Install-Script/main/proxmox-post-install-no-subscription.sh) "`
+- Script for machines with subscription: `bash -c "$(wget -qLO - https://raw.githubusercontent.com/Rittmeyer-ICT-Projects/Proxmox-Post-Install-Script/main/proxmox-post-install-with-subscription.sh) "`
 
 ## Credits
 
