@@ -18,9 +18,19 @@ cat <<EOF >/etc/apt/sources.list.d/pve-enterprise.list
 # deb https://enterprise.proxmox.com/debian/pve bookworm pve-enterprise
 EOF
 
+# Disable 'ceph' enterprise repository
+cat <<EOF >/etc/apt/sources.list.d/ceph.list
+# deb http://enterprise.proxmox.com/debian/ceph-quincy bookworm enterprise
+EOF
+
 # Enable 'pve-no-subscription' repository
 cat <<EOF >/etc/apt/sources.list.d/pve-install-repo.list
 deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription
+EOF
+
+# Enable 'ceph' no-subscription repository
+cat <<EOF >>/etc/apt/sources.list.d/ceph.list
+deb http://download.proxmox.com/debian/ceph-quincy bookworm no-subscription
 EOF
 
 # Disable subscription nag
