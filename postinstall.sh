@@ -83,3 +83,9 @@ msg_ok "Proxmox VE Updated"
 
 msg_info "Skipping Reboot (recommended to reboot manually)"
 msg_ok "Done"
+
+msg_info "Setting up automatic config backup"
+(crontab -l 2>/dev/null; echo "0 8 * * 7 mkdir -p \"\$(awk '/^[[:space:]]*path[[:space:]]+\\/mnt\\/pve\\/.*NAS01/ {print \$2}' /etc/pve/storage.cfg)/ProxmoxConfigBackup\" && tar czf \"\$(awk '/^[[:space:]]*path[[:space:]]+\\/mnt\\/pve\\/.*NAS01/ {print \$2}' /etc/pve/storage.cfg)/ProxmoxConfigBackup/proxmox_backup_\$(date +%Y%m%d_%H%M%S).tar.gz\" -C /etc/pve .") | crontab -
+
+msg_info "Setting up the LXC notes script"
+curl -fsSL -o /usr/local/bin/update-lxc-notes.sh https://raw.githubusercontent.com/Rittmeyer-ICT-Projects/Proxmox-Post-Install-Script/main/update-lxc-notes.sh && chmod +x /usr/local/bin/update-lxc-notes.sh && (crontab -l 2>/dev/null; echo "* * * * * /usr/local/bin/update-lxc-notes.sh >/dev/null 2>&1") | crontab -
